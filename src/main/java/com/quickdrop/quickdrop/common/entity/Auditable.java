@@ -1,4 +1,4 @@
-package com.quickdrop.common.entity;
+package com.quickdrop.quickdrop.common.entity;
 
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedBy;
