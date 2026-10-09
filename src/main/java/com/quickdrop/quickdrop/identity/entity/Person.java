@@ -15,6 +15,9 @@ public class Person extends Auditable {
     @Column(nullable = false, unique = true, length = 15)
     private String mobile;
 
+    @Column(nullable = false)
+    private boolean onboarded = false;
+
     public long getId() {
         return id;
     }
@@ -26,4 +29,13 @@ public class Person extends Auditable {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
+
+    public boolean isOnboarded() {
+        return onboarded;
+    }
+
+    public void setOnboarded(boolean onboarded) {
+        this.onboarded = onboarded;
+    }
 }
+

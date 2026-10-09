@@ -2,24 +2,15 @@ package com.quickdrop.quickdrop.identity.entity;
 
 import com.quickdrop.quickdrop.common.entity.Auditable;
 import com.quickdrop.quickdrop.identity.enums.*;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.FetchType;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(columnNames = { "person_id", "role" })
 })
 public class User extends Auditable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -48,6 +39,10 @@ public class User extends Auditable {
 
     public Person getPerson() {
         return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public String getName() {
@@ -80,6 +75,5 @@ public class User extends Auditable {
 
     public void setStatus(UserStatus status) {
         this.status = status;
-
     }
 }

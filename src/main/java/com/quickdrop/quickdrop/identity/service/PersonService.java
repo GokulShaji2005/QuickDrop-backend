@@ -14,6 +14,11 @@ public class PersonService {
     }
 
     public Person findOrCreateByMobile(String mobile){
+
+
+        // if(mobile ==null || mobile.isBlank()){
+            
+        // }
         return personRepository.findByMobile(mobile).orElseGet(()->{
             Person newPerson=new Person();
             newPerson.setMobile(mobile);
